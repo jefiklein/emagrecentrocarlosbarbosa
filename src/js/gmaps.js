@@ -1,1 +1,102 @@
-function initMap(){let e={lat:-29.297623762292012,lng:-51.50586697815089},a=new google.maps.Map(document.getElementById("g_maps"),{mapId:"8e0c91745eb85209",zoom:14,center:e,disableDefaultUI:!0,zoomControl:!0,zoomControlOptions:{style:google.maps.ZoomControlStyle.SMALL,position:google.maps.ControlPosition.LEFT_BOTTOM}}),t=new google.maps.Marker({position:e,icon:{size:new google.maps.Size(220,220),scaledSize:new google.maps.Size(35,45),origin:new google.maps.Point(0,0),url:"https://emagrecentrocarlosbarbosa.com.br/public/images/gmaps/icon/marker.webp",anchor:new google.maps.Point(15,50)},map:a}),n=new google.maps.InfoWindow({pixelOffset:new google.maps.Size(-93,0)});google.maps.event.addListener(t,"click",()=>{openWindowInfo(n,a,t)}),openWindowInfo(n,a,t)}function openWindowInfo(e,a,t){let n=document.createElement("div"),o=document.createElement("div");o.classList.add("map-info");let i=document.createElement("h2");i.textContent="Emagrecentro - Carlos Barbosa",i.classList.add("map-info-title"),o.appendChild(i);let s=document.createElement("h3");s.textContent="Centro Especializado em Emagrecimento, Sa\xfade e Est\xe9tica",s.classList.add("map-info-description"),o.appendChild(s);let l=document.createElement("div");l.classList.add("row");let d=document.createElement("div");d.classList.add("col-md-6"),d.classList.add("col-sm-12");let p=document.createElement("a");p.href="https://goo.gl/maps/ZQYHoSjb4AyC12TP8",p.target="_blank",p.textContent="R. Valter Jobim, 523 - Sala 06",p.classList.add("map-info-address"),d.appendChild(p),l.appendChild(d);let r=document.createElement("div");r.classList.add("col-md-6"),r.classList.add("col-sm-12");let m=document.createElement("a");m.href="https://goo.gl/maps/ZQYHoSjb4AyC12TP8",m.target="_blank",m.textContent="Centro - Carlos Barbosa - RS",m.classList.add("map-info-address"),r.appendChild(m),l.appendChild(r),o.appendChild(l);let c=document.createElement("a");c.href="tel:54981630905",c.target="_blank",c.textContent="(54) 98163-0905",c.ariaLabel="Ligar para (54) 98163-0905",c.classList.add("map-info-phone"),o.appendChild(c),n.appendChild(o);let C=document.createElement("figure");C.classList.add("map-info-img");let g=document.createElement("img");g.src="https://emagrecentrocarlosbarbosa.com.br/public/images/gmaps/info/emagrecentro-info.webp",C.appendChild(g),n.appendChild(C),e.setContent(n),e.open(a,t)}window.initMap=initMap;
+function initMap() {
+    const position = {lat: -29.297623762292012, lng: -51.50586697815089}; //-29.297623762292012, -51.50586697815089
+    const map = new google.maps.Map(document.getElementById("g_maps"), {
+        mapId: "8e0c91745eb85209",
+        zoom: 14,
+        center: position,
+        disableDefaultUI: true,
+        zoomControl: true,
+        zoomControlOptions: {
+            style: google.maps.ZoomControlStyle.SMALL,
+            position: google.maps.ControlPosition.LEFT_BOTTOM
+        }
+    });
+
+    const markerIconSrc = "https://emagrecentrocarlosbarbosa.com.br/public/images/gmaps/icon/marker.webp";
+    // The marker, positioned at Uluru
+    const marker = new google.maps.Marker({
+        position: position,
+        icon: {
+            size: new google.maps.Size(220, 220),
+            scaledSize: new google.maps.Size(35, 45),
+            origin: new google.maps.Point(0, 0),
+            url: markerIconSrc,
+            anchor: new google.maps.Point(15, 50)
+        },
+        map,
+    });
+
+    const infowindow = new google.maps.InfoWindow({
+        pixelOffset: new google.maps.Size(-93,0)
+    });
+
+    google.maps.event.addListener(marker, "click", () => {
+        openWindowInfo(infowindow, map, marker);
+    });
+    openWindowInfo(infowindow, map, marker);
+}
+
+window.initMap = initMap;
+
+function openWindowInfo(infowindow, map, marker) {
+    const content = document.createElement("div");
+
+    const contentRigth = document.createElement("div");
+    contentRigth.classList.add("map-info");
+    const title = document.createElement("h2");
+    title.textContent = 'Emagrecentro - Carlos Barbosa';
+    title.classList.add("map-info-title");
+    contentRigth.appendChild(title);
+    const description = document.createElement("h3");
+    description.textContent = 'Centro Especializado em Emagrecimento, Saúde e Estética';
+    description.classList.add("map-info-description");
+    contentRigth.appendChild(description);
+
+
+    const contentAddress = document.createElement("div");
+    contentAddress.classList.add("row");
+
+    const contentAddr1 = document.createElement("div");
+    contentAddr1.classList.add("col-md-6");
+    contentAddr1.classList.add("col-sm-12");
+    const address = document.createElement("a");
+    address.href = 'https://goo.gl/maps/ZQYHoSjb4AyC12TP8';
+    address.target = '_blank';
+    address.textContent = "R. Valter Jobim, 523 - Sala 06";
+    address.classList.add("map-info-address");
+    contentAddr1.appendChild(address);
+    contentAddress.appendChild(contentAddr1);
+    const contentAddr2 = document.createElement("div");
+    contentAddr2.classList.add("col-md-6");
+    contentAddr2.classList.add("col-sm-12");
+    const address2 = document.createElement("a");
+    address2.href = 'https://goo.gl/maps/ZQYHoSjb4AyC12TP8';
+    address2.target = '_blank';
+    address2.textContent = "Centro - Carlos Barbosa - RS";
+    address2.classList.add("map-info-address");
+    contentAddr2.appendChild(address2);
+    contentAddress.appendChild(contentAddr2);
+
+    contentRigth.appendChild(contentAddress);
+
+    const phone = document.createElement("a");
+    phone.href = 'tel:54981630905';
+    phone.target = '_blank';
+    phone.textContent = "(54) 98163-0905";
+    phone.ariaLabel = "Ligar para (54) 98163-0905";
+    phone.classList.add("map-info-phone");
+    contentRigth.appendChild(phone);
+
+    content.appendChild(contentRigth);
+
+    const inforWindowImgSrc = "https://emagrecentrocarlosbarbosa.com.br/public/images/gmaps/info/emagrecentro-info.webp";
+    const contentLeft = document.createElement("figure");
+    contentLeft.classList.add('map-info-img');
+    const img = document.createElement("img");
+    img.src = inforWindowImgSrc;
+    contentLeft.appendChild(img);
+    content.appendChild(contentLeft);
+
+    infowindow.setContent(content);
+    infowindow.open(map, marker);
+}
