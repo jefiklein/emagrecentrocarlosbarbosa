@@ -1,0 +1,147 @@
+---
+const navItems = [
+  { label: 'Início', href: '/' },
+  { label: 'Método', href: '/#metodo' },
+  { label: 'Resultados', href: '/#resultados' },
+  { label: 'Tratamentos', href: '/#tratamentos' },
+  { label: 'Depoimentos', href: '/#depoimentos' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Contato', href: '/#contato' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header id="header" class="fixed top-0 left-0 right-0 z-40 transition-all duration-300">
+  <nav class="section-container">
+    <div class="flex items-center justify-between h-20">
+      <!-- Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <img
+          src="/images/logo.png"
+          alt="Emagrecentro Carlos Barbosa"
+          class="h-12 w-auto transition-transform group-hover:scale-105"
+          width="48"
+          height="48"
+        />
+        <div class="hidden sm:block">
+          <span class="block text-lg font-bold text-primary-600 leading-tight">Emagrecentro</span>
+          <span class="block text-sm text-gray-600 leading-tight">Carlos Barbosa</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center gap-8">
+        {navItems.map((item) => (
+          <a
+            href={item.href}
+            class={`text-sm font-medium transition-colors hover:text-primary-600 ${
+              currentPath === item.href ? 'text-primary-600' : 'text-gray-700'
+            }`}
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- CTA Button -->
+      <div class="hidden md:block">
+        <a
+          href="https://api.whatsapp.com/send?phone=555481630905&text=Ol%C3%A1,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary text-sm px-6 py-3"
+        >
+          Agendar Avaliação
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        class="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path id="menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="lg:hidden hidden bg-white border-t shadow-lg">
+    <div class="section-container py-4 space-y-2">
+      {navItems.map((item) => (
+        <a
+          href={item.href}
+          class={`block py-3 px-4 rounded-lg font-medium transition-colors ${
+            currentPath === item.href
+              ? 'bg-primary-50 text-primary-600'
+              : 'text-gray-700 hover:bg-gray-50'
+          }`}
+        >
+          {item.label}
+        </a>
+      ))}
+      <a
+        href="https://api.whatsapp.com/send?phone=555481630905&text=Ol%C3%A1,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="block w-full mt-4 btn-whatsapp text-center"
+      >
+        Agendar Avaliação
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Header scroll effect
+  const header = document.getElementById('header');
+  let lastScroll = 0;
+
+  function updateHeader() {
+    const currentScroll = window.scrollY;
+
+    if (currentScroll > 50) {
+      header?.classList.add('bg-white/95', 'backdrop-blur-lg', 'shadow-md');
+    } else {
+      header?.classList.remove('bg-white/95', 'backdrop-blur-lg', 'shadow-md');
+    }
+
+    lastScroll = currentScroll;
+  }
+
+  window.addEventListener('scroll', updateHeader);
+  updateHeader();
+
+  // Mobile menu toggle
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const menuIcon = document.getElementById('menu-icon');
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    const isOpen = mobileMenu?.classList.contains('hidden');
+
+    if (isOpen) {
+      mobileMenu?.classList.remove('hidden');
+      menuIcon?.setAttribute('d', 'M6 18L18 6M6 6l12 12');
+      mobileMenuBtn?.setAttribute('aria-expanded', 'true');
+    } else {
+      mobileMenu?.classList.add('hidden');
+      menuIcon?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+    }
+  });
+
+  // Close mobile menu on link click
+  mobileMenu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden');
+      menuIcon?.setAttribute('d', 'M4 6h16M4 12h16M4 18h16');
+      mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
