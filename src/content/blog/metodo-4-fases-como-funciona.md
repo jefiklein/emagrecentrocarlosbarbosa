@@ -111,7 +111,7 @@ O Método 4 Fases é indicado para:
 
 Se você está em Carlos Barbosa ou região da Serra Gaúcha, venha nos conhecer! Oferecemos uma avaliação inicial para entender suas necessidades e explicar como o Método 4 Fases pode ajudar na sua transformação.
 
-**Agende sua avaliação pelo WhatsApp: (54) 98163-0905**
+**Agende sua avaliação pelo WhatsApp: (54) 99338-8577**
 
 ---
 

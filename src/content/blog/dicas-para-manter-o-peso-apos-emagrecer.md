@@ -88,7 +88,7 @@ Manter o peso é um compromisso de longo prazo com você mesmo. Com as estratég
 
 Se você está em Carlos Barbosa e região, conte com a Emagrecentro nessa jornada. Nosso acompanhamento não termina quando você atinge o peso ideal - continuamos ao seu lado na manutenção.
 
-**Agende uma conversa conosco: (54) 98163-0905**
+**Agende uma conversa conosco: (54) 99338-8577**
 
 ---
 

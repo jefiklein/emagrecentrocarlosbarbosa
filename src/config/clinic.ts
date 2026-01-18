@@ -51,9 +51,9 @@ export const clinicConfig = {
   // ============================================
   // MUDAR: Número de WhatsApp da clínica
   phone: {
-    display: '(54) 98163-0905', // formato para exibição
-    whatsapp: '555481630905', // formato para link (sem +, sem -)
-    raw: '+555481630905', // formato internacional
+    display: '(54) 99338-8577', // formato para exibição
+    whatsapp: '5554993388577', // formato para link (sem +, sem -)
+    raw: '+5554993388577', // formato internacional
   },
 
   // ============================================
@@ -61,14 +61,14 @@ export const clinicConfig = {
   // ============================================
   // MUDAR: Endereço completo da clínica
   address: {
-    street: 'Rua Visconde de Pelotas, 583',
-    complement: 'Sala 01', // deixe vazio '' se não tiver
+    street: 'Rua Valter Jobim, 523',
+    complement: 'Sala 06', // deixe vazio '' se não tiver
     neighborhood: 'Centro',
     city: 'Carlos Barbosa',
     state: 'RS',
     zipCode: '95185-000',
     country: 'Brasil',
-    full: 'Rua Visconde de Pelotas, 583 - Sala 01, Centro, Carlos Barbosa - RS, 95185-000',
+    full: 'Rua Valter Jobim, 523 - Sala 06, Centro, Carlos Barbosa - RS, 95185-000',
   },
 
   // ============================================
@@ -86,12 +86,12 @@ export const clinicConfig = {
   // ============================================
   // MUDAR: Se os horários forem diferentes
   hours: {
-    weekdays: { open: '09:00', close: '18:00' },
-    saturday: { open: '09:00', close: '12:00' },
+    weekdays: { open: '08:00', close: '20:00', lunch: { start: '12:00', end: '13:00' } },
+    saturday: { open: '08:00', close: '12:00' },
     sunday: null, // null = fechado
     display: [
-      { day: 'Segunda a Sexta', hours: '9h às 18h' },
-      { day: 'Sábado', hours: '9h às 12h' },
+      { day: 'Segunda a Sexta', hours: '8h às 12h e 13h às 20h' },
+      { day: 'Sábado', hours: '8h às 12h' },
       { day: 'Domingo', hours: 'Fechado' },
     ],
   },
