@@ -1,9 +1,13 @@
 ---
-const horarios = [
-  { dia: 'Segunda a Sexta', horario: '9h às 18h' },
-  { dia: 'Sábado', horario: '9h às 12h' },
-  { dia: 'Domingo', horario: 'Fechado' },
-];
+import { clinicConfig, getWhatsAppLink } from '../config/clinic';
+
+const { name, city, address, phone, social, hours, cityInfo, geo } = clinicConfig;
+
+const horarios = hours.display;
+const whatsappLink = getWhatsAppLink('Olá, gostaria de agendar uma avaliação');
+
+// Embed do Google Maps específico para cada cidade
+const mapsEmbed = `https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3480.7!2d${geo.longitude}!3d${geo.latitude}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2s${encodeURIComponent(name)}!5e0!3m2!1spt-BR!2sbr`;
 ---
 
 <section id="contato" class="py-20 lg:py-32 bg-white">
@@ -17,7 +21,7 @@ const horarios = [
         Venha conhecer <span class="gradient-text">nossa unidade</span>
       </h2>
       <p class="section-subtitle mt-4">
-        Estamos localizados no coração de Carlos Barbosa, RS. Venha nos visitar!
+        Estamos localizados no coração de {city}, RS. Venha nos visitar!
       </p>
     </div>
 
@@ -26,14 +30,14 @@ const horarios = [
       <div class="animate-on-scroll">
         <div class="rounded-3xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px]">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3480.7!2d-51.5025!3d-29.2975!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sEmagrecentro%20Carlos%20Barbosa!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+            src={mapsEmbed}
             width="100%"
             height="100%"
             style="border:0;"
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="Localização Emagrecentro Carlos Barbosa"
+            title={`Localização ${name}`}
           ></iframe>
         </div>
       </div>
@@ -53,11 +57,11 @@ const horarios = [
                 </svg>
               </div>
               <div>
-                <h4 class="font-semibold text-gray-900">Emagrecentro Carlos Barbosa</h4>
+                <h4 class="font-semibold text-gray-900">{name}</h4>
                 <p class="text-gray-600">
-                  Rua Visconde de Pelotas, 583 - Sala 01<br />
-                  Centro, Carlos Barbosa - RS<br />
-                  CEP: 95185-000
+                  {address.street}{address.complement && ` - ${address.complement}`}<br />
+                  {address.neighborhood}, {address.city} - {address.state}<br />
+                  CEP: {address.zipCode}
                 </p>
               </div>
             </div>
@@ -70,8 +74,8 @@ const horarios = [
               </div>
               <div>
                 <h4 class="font-semibold text-gray-900">WhatsApp</h4>
-                <a href="tel:+555481630905" class="text-gray-600 hover:text-primary-600 transition-colors">
-                  (54) 98163-0905
+                <a href={`tel:${phone.raw}`} class="text-gray-600 hover:text-primary-600 transition-colors">
+                  {phone.display}
                 </a>
               </div>
             </div>
@@ -84,8 +88,8 @@ const horarios = [
               </div>
               <div>
                 <h4 class="font-semibold text-gray-900">Instagram</h4>
-                <a href="https://instagram.com/emagrecentrocarlosbarbosa" target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-primary-600 transition-colors">
-                  @emagrecentrocarlosbarbosa
+                <a href={social.instagram.url} target="_blank" rel="noopener noreferrer" class="text-gray-600 hover:text-primary-600 transition-colors">
+                  {social.instagram.handle}
                 </a>
               </div>
             </div>
@@ -98,9 +102,9 @@ const horarios = [
           <div class="space-y-3">
             {horarios.map((item) => (
               <div class="flex justify-between items-center py-2 border-b border-gray-200 last:border-0">
-                <span class="text-gray-700 font-medium">{item.dia}</span>
-                <span class={`${item.horario === 'Fechado' ? 'text-gray-400' : 'text-primary-600 font-semibold'}`}>
-                  {item.horario}
+                <span class="text-gray-700 font-medium">{item.day}</span>
+                <span class={`${item.hours === 'Fechado' ? 'text-gray-400' : 'text-primary-600 font-semibold'}`}>
+                  {item.hours}
                 </span>
               </div>
             ))}
@@ -109,7 +113,7 @@ const horarios = [
 
         <!-- CTA -->
         <a
-          href="https://api.whatsapp.com/send?phone=555481630905&text=Ol%C3%A1,%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o"
+          href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
           class="btn-whatsapp w-full justify-center"
@@ -122,41 +126,29 @@ const horarios = [
       </div>
     </div>
 
-    <!-- About the City -->
+    <!-- About the City - CONTEÚDO ÚNICO POR CIDADE -->
     <div class="mt-24 animate-on-scroll">
       <div class="bg-gradient-to-br from-primary-600 to-primary-700 rounded-3xl p-8 lg:p-12 text-white">
         <div class="grid lg:grid-cols-2 gap-8 items-center">
           <div>
             <h3 class="text-2xl lg:text-3xl font-bold mb-4">
-              Orgulho de estar em Carlos Barbosa
+              Orgulho de estar em {city}
             </h3>
             <p class="text-white/90 leading-relaxed mb-6">
-              Carlos Barbosa é uma das cidades com melhor qualidade de vida do Brasil,
-              com o 2º melhor IDH do Rio Grande do Sul. Terra da Tramontina e da Cooperativa Santa Clara,
-              nossa cidade valoriza a saúde e o bem-estar de seus moradores.
+              {cityInfo.description}
             </p>
             <p class="text-white/90 leading-relaxed">
-              Estamos aqui para contribuir com essa tradição, ajudando os moradores de Carlos Barbosa
+              Estamos aqui para contribuir com essa tradição, ajudando os moradores de {city}
               e região a alcançarem seus objetivos de saúde e emagrecimento.
             </p>
           </div>
           <div class="grid grid-cols-2 gap-4">
-            <div class="bg-white/10 rounded-2xl p-6 text-center backdrop-blur-sm">
-              <div class="text-3xl font-bold">0,796</div>
-              <div class="text-sm text-white/80">IDH Municipal</div>
-            </div>
-            <div class="bg-white/10 rounded-2xl p-6 text-center backdrop-blur-sm">
-              <div class="text-3xl font-bold">30k+</div>
-              <div class="text-sm text-white/80">Habitantes</div>
-            </div>
-            <div class="bg-white/10 rounded-2xl p-6 text-center backdrop-blur-sm">
-              <div class="text-3xl font-bold">2º</div>
-              <div class="text-sm text-white/80">Melhor IDH do RS</div>
-            </div>
-            <div class="bg-white/10 rounded-2xl p-6 text-center backdrop-blur-sm">
-              <div class="text-3xl font-bold">93%</div>
-              <div class="text-sm text-white/80">Classes A, B e C</div>
-            </div>
+            {cityInfo.keyFacts.map((fact) => (
+              <div class="bg-white/10 rounded-2xl p-6 text-center backdrop-blur-sm">
+                <div class="text-3xl font-bold">{fact.value}</div>
+                <div class="text-sm text-white/80">{fact.label}</div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
