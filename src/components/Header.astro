@@ -17,13 +17,10 @@ const currentPath = Astro.url.pathname;
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
       <a href="/" class="flex items-center gap-3 group">
-        <img
-          src="/images/logo.png"
-          alt="Emagrecentro Carlos Barbosa"
-          class="h-12 w-auto transition-transform group-hover:scale-105"
-          width="48"
-          height="48"
-        />
+        <!-- Logo placeholder - substitua por <img src="/images/logo.png" ... /> quando tiver o logo -->
+        <div class="h-12 w-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-md transition-transform group-hover:scale-105">
+          <span class="text-white font-bold text-xl">E</span>
+        </div>
         <div class="hidden sm:block">
           <span class="block text-lg font-bold text-primary-600 leading-tight">Emagrecentro</span>
           <span class="block text-sm text-gray-600 leading-tight">Carlos Barbosa</span>
@@ -47,7 +44,7 @@ const currentPath = Astro.url.pathname;
       <!-- CTA Button -->
       <div class="hidden md:block">
         <a
-          href="https://api.whatsapp.com/send?phone=555481630905&text=Ol%C3%A1,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o"
+          href="https://api.whatsapp.com/send?phone=5554993388577&text=Ol%C3%A1,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o"
           target="_blank"
           rel="noopener noreferrer"
           class="btn-primary text-sm px-6 py-3"
@@ -86,7 +83,7 @@ const currentPath = Astro.url.pathname;
         </a>
       ))}
       <a
-        href="https://api.whatsapp.com/send?phone=555481630905&text=Ol%C3%A1,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o"
+        href="https://api.whatsapp.com/send?phone=5554993388577&text=Ol%C3%A1,%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o"
         target="_blank"
         rel="noopener noreferrer"
         class="block w-full mt-4 btn-whatsapp text-center"

@@ -3,8 +3,6 @@ title: "7 Dicas Para Manter o Peso Após Emagrecer"
 description: "Descubra estratégias comprovadas para manter o peso após o emagrecimento e evitar o temido efeito sanfona."
 pubDate: 2025-01-05
 author: "Emagrecentro Carlos Barbosa"
-image: "/images/blog/manter-peso.jpg"
-imageAlt: "Pessoa comemorando resultados de emagrecimento"
 tags: ["manutenção", "efeito sanfona", "dicas", "estilo de vida"]
 ---
 
@@ -88,7 +86,7 @@ Manter o peso é um compromisso de longo prazo com você mesmo. Com as estratég
 
 Se você está em Carlos Barbosa e região, conte com a Emagrecentro nessa jornada. Nosso acompanhamento não termina quando você atinge o peso ideal - continuamos ao seu lado na manutenção.
 
-**Agende uma conversa conosco: (54) 98163-0905**
+**Agende uma conversa conosco: (54) 99338-8577**
 
 ---
 

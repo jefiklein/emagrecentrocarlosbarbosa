@@ -22,6 +22,7 @@ import Metodo from '../components/Metodo.astro';
 import Resultados from '../components/Resultados.astro';
 import Depoimentos from '../components/Depoimentos.astro';
 import FAQ from '../components/FAQ.astro';
+import Tratamentos from '../components/Tratamentos.astro';
 import Contato from '../components/Contato.astro';
 import Disclaimer from '../components/Disclaimer.astro';
 import Footer from '../components/Footer.astro';
@@ -47,7 +48,10 @@ const { city, seo } = clinicConfig;
     <!-- 3. MÉTODO - A solução científica -->
     <Metodo />
 
-    <!-- 4. RESULTADOS - Prova visual (antes/depois) -->
+    <!-- 4. TRATAMENTOS - Serviços oferecidos -->
+    <Tratamentos />
+
+    <!-- 5. RESULTADOS - Prova visual (antes/depois) -->
     <Resultados />
 
     <!-- 5. DEPOIMENTOS - Prova social localizada -->

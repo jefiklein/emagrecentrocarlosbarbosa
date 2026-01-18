@@ -82,8 +82,8 @@ function openWindowInfo(infowindow, map, marker) {
     const phone = document.createElement("a");
     phone.href = 'tel:54981630905';
     phone.target = '_blank';
-    phone.textContent = "(54) 98163-0905";
-    phone.ariaLabel = "Ligar para (54) 98163-0905";
+    phone.textContent = "(54) 99338-8577";
+    phone.ariaLabel = "Ligar para (54) 99338-8577";
     phone.classList.add("map-info-phone");
     contentRigth.appendChild(phone);
 

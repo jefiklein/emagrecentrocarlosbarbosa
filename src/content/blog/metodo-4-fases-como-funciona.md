@@ -3,8 +3,6 @@ title: "Método 4 Fases: Como Funciona o Tratamento da Emagrecentro"
 description: "Entenda em detalhes como funciona o Método 4 Fases, o protocolo de emagrecimento científico que já transformou a vida de milhões de pessoas."
 pubDate: 2025-01-10
 author: "Emagrecentro Carlos Barbosa"
-image: "/images/blog/metodo-4-fases.jpg"
-imageAlt: "Ilustração das 4 fases do método de emagrecimento"
 tags: ["método 4 fases", "tratamento", "emagrecentro", "emagrecimento"]
 ---
 
@@ -111,7 +109,7 @@ O Método 4 Fases é indicado para:
 
 Se você está em Carlos Barbosa ou região da Serra Gaúcha, venha nos conhecer! Oferecemos uma avaliação inicial para entender suas necessidades e explicar como o Método 4 Fases pode ajudar na sua transformação.
 
-**Agende sua avaliação pelo WhatsApp: (54) 98163-0905**
+**Agende sua avaliação pelo WhatsApp: (54) 99338-8577**
 
 ---
 
