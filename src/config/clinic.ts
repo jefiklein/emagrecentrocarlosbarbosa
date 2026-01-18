@@ -1,22 +1,40 @@
 /**
- * Configuração da Clínica
+ * ============================================================================
+ * CONFIGURAÇÃO DA CLÍNICA - EMAGRECENTRO CARLOS BARBOSA
+ * ============================================================================
  *
- * Este arquivo centraliza todas as informações específicas da clínica.
- * Para criar um site para outra cidade (ex: Garibaldi), basta duplicar
- * este arquivo e alterar os dados abaixo.
+ * INSTRUÇÕES PARA CRIAR SITE DE OUTRA CIDADE (ex: Garibaldi):
+ * -----------------------------------------------------------
+ * 1. Copie todo este repositório para um novo repositório
+ * 2. Altere APENAS este arquivo (clinic.ts) com os dados da nova cidade
+ * 3. O resto do código permanece IGUAL - não precisa mudar nada
  *
- * Estrutura pensada para fácil replicação:
- * - Carlos Barbosa: emagrecentrocarlosbarbosa.com.br
- * - Garibaldi: emagrecentrogaribaldi.com.br (futuro)
+ * O QUE MUDAR PARA CADA CIDADE:
+ * - name, shortName, slug, city → Nome e identificação
+ * - domain, url → Domínio do novo site
+ * - phone → Número de WhatsApp da clínica
+ * - address, geo → Endereço e coordenadas do Google Maps
+ * - social → Redes sociais da clínica (criar novas para cada cidade)
+ * - analytics → IDs do Google Analytics/Ads/Meta Pixel (criar novos)
+ * - cityInfo → IMPORTANTE: Dados únicos da cidade (IDH, destaques, descrição)
+ * - seo → Keywords específicas da cidade
+ * - reviews → Avaliações do Google da clínica
+ *
+ * O QUE NÃO MUDAR:
+ * - colors → Manter as cores da marca Emagrecentro
+ * - O visual/layout do site → Identidade da franquia
+ *
+ * ============================================================================
  */
 
 export const clinicConfig = {
   // ============================================
   // IDENTIFICAÇÃO DA CLÍNICA
   // ============================================
+  // MUDAR: Ajuste para o nome da sua cidade
   name: 'Emagrecentro Carlos Barbosa',
   shortName: 'Emagrecentro CB',
-  slug: 'carlos-barbosa',
+  slug: 'carlos-barbosa', // usado em URLs, sem espaços ou acentos
   city: 'Carlos Barbosa',
   state: 'RS',
   region: 'Serra Gaúcha',
@@ -24,24 +42,27 @@ export const clinicConfig = {
   // ============================================
   // DOMÍNIO E URLs
   // ============================================
+  // MUDAR: Coloque o domínio da nova clínica
   domain: 'emagrecentrocarlosbarbosa.com.br',
   url: 'https://emagrecentrocarlosbarbosa.com.br',
 
   // ============================================
   // CONTATO
   // ============================================
+  // MUDAR: Número de WhatsApp da clínica
   phone: {
-    display: '(54) 98163-0905',
-    whatsapp: '555481630905',
-    raw: '+555481630905',
+    display: '(54) 98163-0905', // formato para exibição
+    whatsapp: '555481630905', // formato para link (sem +, sem -)
+    raw: '+555481630905', // formato internacional
   },
 
   // ============================================
   // ENDEREÇO
   // ============================================
+  // MUDAR: Endereço completo da clínica
   address: {
     street: 'Rua Visconde de Pelotas, 583',
-    complement: 'Sala 01',
+    complement: 'Sala 01', // deixe vazio '' se não tiver
     neighborhood: 'Centro',
     city: 'Carlos Barbosa',
     state: 'RS',
@@ -53,6 +74,8 @@ export const clinicConfig = {
   // ============================================
   // GEOLOCALIZAÇÃO (para SEO local e mapa)
   // ============================================
+  // MUDAR: Coordenadas do Google Maps da clínica
+  // Como encontrar: Abra Google Maps, clique com botão direito no local, copie as coordenadas
   geo: {
     latitude: -29.2975,
     longitude: -51.5025,
@@ -61,10 +84,11 @@ export const clinicConfig = {
   // ============================================
   // HORÁRIO DE FUNCIONAMENTO
   // ============================================
+  // MUDAR: Se os horários forem diferentes
   hours: {
     weekdays: { open: '09:00', close: '18:00' },
     saturday: { open: '09:00', close: '12:00' },
-    sunday: null, // fechado
+    sunday: null, // null = fechado
     display: [
       { day: 'Segunda a Sexta', hours: '9h às 18h' },
       { day: 'Sábado', hours: '9h às 12h' },
@@ -75,6 +99,8 @@ export const clinicConfig = {
   // ============================================
   // REDES SOCIAIS
   // ============================================
+  // MUDAR: Criar redes sociais específicas para cada clínica
+  // IMPORTANTE: Cada cidade deve ter suas próprias redes sociais
   social: {
     instagram: {
       url: 'https://www.instagram.com/emagrecentrocarlosbarbosa',
@@ -101,22 +127,31 @@ export const clinicConfig = {
   // ============================================
   // ANALYTICS E TRACKING
   // ============================================
+  // MUDAR: Criar novos IDs para cada clínica no Google Analytics, Google Ads e Meta
+  // Cada clínica deve ter seus próprios IDs para rastrear separadamente
   analytics: {
-    googleAnalyticsId: 'G-DG4GERJZX2',
-    googleAdsId: 'AW-10775545574',
-    metaPixelId: '602864245324270',
+    googleAnalyticsId: 'G-DG4GERJZX2', // Google Analytics 4
+    googleAdsId: 'AW-10775545574', // Google Ads
+    metaPixelId: '602864245324270', // Meta/Facebook Pixel
   },
 
   // ============================================
-  // INFORMAÇÕES DA CIDADE (para conteúdo local)
+  // INFORMAÇÕES DA CIDADE
   // ============================================
+  // MUDAR: Este é o conteúdo que diferencia cada site!
+  // Pesquise sobre a cidade e coloque informações únicas
+  //
+  // Para CARLOS BARBOSA: Terra da Tramontina, alto IDH
+  // Para GARIBALDI: Capital do Espumante, turismo, vinícolas
+  //
   cityInfo: {
     population: '30.420',
     idh: '0,796',
     idhRank: '2º melhor do RS',
-    highlight: 'Terra da Tramontina e da Santa Clara',
+    highlight: 'Terra da Tramontina e da Santa Clara', // Frase de destaque da cidade
     description:
-      'Carlos Barbosa é uma das cidades com melhor qualidade de vida do Brasil, com o 2º melhor IDH do Rio Grande do Sul. Terra da Tramontina e da Cooperativa Santa Clara, valoriza a saúde e o bem-estar de seus moradores.',
+      'Carlos Barbosa é uma das cidades com melhor qualidade de vida do Brasil, com o 2º melhor IDH do Rio Grande do Sul. Terra da Tramontina e da Cooperativa Santa Clara, nossa cidade valoriza a saúde e o bem-estar de seus moradores.',
+    // keyFacts: 4 cards que aparecem na seção "Orgulho de estar em [cidade]"
     keyFacts: [
       { label: 'IDH Municipal', value: '0,796' },
       { label: 'Habitantes', value: '30k+' },
@@ -128,6 +163,7 @@ export const clinicConfig = {
   // ============================================
   // SEO E META TAGS
   // ============================================
+  // MUDAR: Keywords específicas para cada cidade
   seo: {
     title: 'Emagrecentro Carlos Barbosa | Centro de Emagrecimento e Estética',
     description:
@@ -135,10 +171,10 @@ export const clinicConfig = {
     keywords: [
       'emagrecimento carlos barbosa',
       'clínica de emagrecimento serra gaúcha',
-      'emagrecentro',
+      'emagrecentro carlos barbosa', // MUDAR nome da cidade
       'método 4 fases',
-      'perder peso carlos barbosa',
-      'estética carlos barbosa',
+      'perder peso carlos barbosa', // MUDAR nome da cidade
+      'estética carlos barbosa', // MUDAR nome da cidade
       'tratamento para emagrecer',
       'dieta',
       'nutrição',
@@ -146,8 +182,9 @@ export const clinicConfig = {
   },
 
   // ============================================
-  // CORES (para personalização por cidade)
+  // CORES DA MARCA
   // ============================================
+  // NÃO MUDAR: Manter as cores da marca Emagrecentro para todas as clínicas
   colors: {
     primary: '#e06455', // vermelho Emagrecentro
     secondary: '#eab308', // dourado
@@ -155,17 +192,18 @@ export const clinicConfig = {
   },
 
   // ============================================
-  // AVALIAÇÕES
+  // AVALIAÇÕES DO GOOGLE
   // ============================================
+  // MUDAR: Coloque as avaliações reais do Google Meu Negócio da clínica
   reviews: {
     googleRating: 4.9,
     googleReviewCount: 127,
   },
 };
 
-// ============================================
-// FUNÇÕES UTILITÁRIAS
-// ============================================
+// ============================================================================
+// FUNÇÕES UTILITÁRIAS - NÃO PRECISA MUDAR
+// ============================================================================
 
 /**
  * Gera o link do WhatsApp com mensagem pré-definida
