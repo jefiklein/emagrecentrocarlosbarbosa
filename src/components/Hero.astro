@@ -12,8 +12,8 @@ const whatsappLink = getWhatsAppLink('Olá, vim pelo site e gostaria de agendar 
   </div>
 
   <!-- Decorative blurs -->
-  <div class="absolute top-20 left-10 w-72 h-72 bg-primary-200/20 rounded-full blur-3xl"></div>
-  <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary-200/20 rounded-full blur-3xl"></div>
+  <div class="absolute top-20 left-10 w-72 h-72 bg-primary-200/30 rounded-full blur-3xl"></div>
+  <div class="absolute bottom-20 right-10 w-96 h-96 bg-secondary-200/30 rounded-full blur-3xl"></div>
 
   <div class="section-container relative z-10 pt-24 pb-16 lg:pt-32 lg:pb-24">
     <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -90,30 +90,69 @@ const whatsappLink = getWhatsAppLink('Olá, vim pelo site e gostaria de agendar 
         </p>
       </div>
 
-      <!-- Visual - Imagem ao invés de vídeo -->
+      <!-- Visual Card - Design sem dependência de imagem -->
       <div class="relative">
-        <!-- Main Image Container -->
-        <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-gray-100">
-          <img
-            src="/images/hero-transformation.jpg"
-            alt="Transformação com o Método 4 Fases - Emagrecentro"
-            class="w-full h-auto object-cover aspect-[4/5] lg:aspect-[3/4]"
-            loading="eager"
-            onerror="this.style.display='none'; this.parentElement.classList.add('hero-placeholder');"
-          />
-          <!-- Fallback se não tiver imagem -->
-          <div class="hero-placeholder-content hidden absolute inset-0 flex items-center justify-center bg-gradient-to-br from-primary-100 to-primary-200">
-            <div class="text-center p-8">
-              <div class="w-24 h-24 mx-auto mb-4 bg-primary-500 rounded-full flex items-center justify-center">
-                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+        <!-- Main Card -->
+        <div class="relative bg-gradient-to-br from-primary-500 via-primary-600 to-primary-700 rounded-3xl p-8 lg:p-10 shadow-2xl overflow-hidden">
+          <!-- Decorative circles -->
+          <div class="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+          <div class="absolute bottom-0 left-0 w-32 h-32 bg-white/10 rounded-full translate-y-1/2 -translate-x-1/2"></div>
+
+          <!-- Content -->
+          <div class="relative z-10 text-white">
+            <!-- Header -->
+            <div class="text-center mb-8">
+              <div class="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-full mb-4 backdrop-blur-sm">
+                <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
                 </svg>
               </div>
-              <p class="text-primary-700 font-semibold text-lg">Sua transformação começa aqui</p>
+              <h3 class="text-2xl font-bold mb-2">Método 4 Fases</h3>
+              <p class="text-white/80">Transformação em 5 semanas</p>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-2 gap-4 mb-8">
+              <div class="bg-white/10 rounded-2xl p-4 text-center backdrop-blur-sm">
+                <div class="text-3xl font-bold mb-1">-10%</div>
+                <div class="text-sm text-white/70">do peso</div>
+              </div>
+              <div class="bg-white/10 rounded-2xl p-4 text-center backdrop-blur-sm">
+                <div class="text-3xl font-bold mb-1">5</div>
+                <div class="text-sm text-white/70">semanas</div>
+              </div>
+              <div class="bg-white/10 rounded-2xl p-4 text-center backdrop-blur-sm">
+                <div class="text-3xl font-bold mb-1">100+</div>
+                <div class="text-sm text-white/70">estudos</div>
+              </div>
+              <div class="bg-white/10 rounded-2xl p-4 text-center backdrop-blur-sm">
+                <div class="text-3xl font-bold mb-1">87%</div>
+                <div class="text-sm text-white/70">mantêm</div>
+              </div>
+            </div>
+
+            <!-- Features -->
+            <div class="space-y-3">
+              <div class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 backdrop-blur-sm">
+                <svg class="w-5 h-5 text-green-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-sm">Sem passar fome</span>
+              </div>
+              <div class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 backdrop-blur-sm">
+                <svg class="w-5 h-5 text-green-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-sm">Sem medicamentos</span>
+              </div>
+              <div class="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3 backdrop-blur-sm">
+                <svg class="w-5 h-5 text-green-300 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-sm">Acompanhamento profissional</span>
+              </div>
             </div>
           </div>
-          <!-- Overlay gradient -->
-          <div class="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent"></div>
         </div>
 
         <!-- Floating Stats Card -->
@@ -125,19 +164,19 @@ const whatsappLink = getWhatsAppLink('Olá, vim pelo site e gostaria de agendar 
               </svg>
             </div>
             <div>
-              <div class="text-2xl font-bold text-gray-900">-10%</div>
-              <div class="text-sm text-gray-500">em 5 semanas</div>
+              <div class="text-2xl font-bold text-gray-900">7 dias</div>
+              <div class="text-sm text-gray-500">para ver resultado</div>
             </div>
           </div>
         </div>
 
-        <!-- Floating Badge - Estudos científicos -->
-        <div class="absolute -top-4 -right-4 bg-primary-600 text-white rounded-2xl shadow-xl px-4 py-3 hidden md:block animate-float" style="animation-delay: 0.5s;">
+        <!-- Floating Badge -->
+        <div class="absolute -top-4 -right-4 bg-secondary-500 text-white rounded-2xl shadow-xl px-4 py-3 hidden md:block animate-float" style="animation-delay: 0.5s;">
           <div class="flex items-center gap-2">
             <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
             </svg>
-            <span class="font-semibold text-sm">100+ estudos</span>
+            <span class="font-semibold text-sm">4.9/5</span>
           </div>
         </div>
       </div>
@@ -162,8 +201,5 @@ const whatsappLink = getWhatsAppLink('Olá, vim pelo site e gostaria de agendar 
   }
   .animate-float {
     animation: float 3s ease-in-out infinite;
-  }
-  .hero-placeholder .hero-placeholder-content {
-    display: flex !important;
   }
 </style>
