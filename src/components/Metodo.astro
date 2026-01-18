@@ -1,120 +1,174 @@
 ---
+/**
+ * SEÇÃO MÉTODO 4 FASES
+ *
+ * Conforme as pesquisas, cada fase deve vender o BENEFÍCIO EMOCIONAL, não apenas features.
+ * - Fase 1 não é sobre "limpar o fígado", é sobre "desinchar a barriga para fechar o zíper"
+ * - Nomes com aliteração para memorabilidade: Ativação, Aceleração, Aprendizado, Ancoragem
+ */
+
+import { getWhatsAppLink } from '../config/clinic';
+
+const whatsappLink = getWhatsAppLink('Olá, gostaria de saber mais sobre o Método 4 Fases');
+
 const fases = [
   {
     numero: '1',
-    titulo: 'Fase Detox',
-    duracao: '7 dias',
-    descricao: 'Fase de desintoxicação onde você elimina toxinas e começa a perder peso rapidamente. Perda média de 3% a 4% do peso corporal.',
-    beneficios: ['Eliminação de toxinas', 'Redução da retenção líquida', 'Início da queima de gordura'],
+    nome: 'ATIVAÇÃO',
+    titulo: 'Desintoxicação',
+    duracao: '1 semana',
+    promessaEmocional: 'Sinta-se mais leve em 7 dias',
+    descricao: 'Seu corpo é "acordado" através de protocolos científicos que preparam o organismo para queimar gordura. Elimine a retenção de líquidos e o inchaço que travam seu metabolismo.',
+    resultadoEsperado: 'Perda de 3% a 4% do peso',
+    inclusos: ['Avaliação completa', 'Auriculoterapia', 'Sessão de infra-red', 'Dieta personalizada'],
     cor: 'from-green-500 to-green-600',
     bgCor: 'bg-green-50',
     iconeCor: 'text-green-600',
+    borderCor: 'border-green-200',
   },
   {
     numero: '2',
-    titulo: 'Eliminação de Peso',
+    nome: 'ACELERAÇÃO',
+    titulo: 'Queima Intensa',
     duracao: '4 semanas',
-    descricao: 'Fase de emagrecimento acelerado com acompanhamento profissional. Eliminação de 5% a 7% do peso corporal.',
-    beneficios: ['Queima de gordura intensa', 'Redução de medidas', 'Aumento da energia'],
+    promessaEmocional: 'Aqui acontece a transformação visível',
+    descricao: 'A fase de transformação. Através de uma reeducação metabólica científica, seu corpo passa a usar a gordura estocada como fonte de energia. Você emagrece enquanto se sente saciado.',
+    resultadoEsperado: 'Até 10% do peso eliminado',
+    inclusos: ['Acompanhamento semanal', 'Ajustes de dieta', 'Controle de medidas', 'Suporte contínuo'],
     cor: 'from-primary-500 to-primary-600',
     bgCor: 'bg-primary-50',
     iconeCor: 'text-primary-600',
+    borderCor: 'border-primary-200',
   },
   {
     numero: '3',
-    titulo: 'Reeducação Alimentar',
+    nome: 'APRENDIZADO',
+    titulo: 'Reeducação',
     duracao: '3 semanas',
-    descricao: 'Reintrodução gradual de carboidratos de baixo índice glicêmico para criar novos hábitos alimentares saudáveis.',
-    beneficios: ['Novos hábitos alimentares', 'Estabilização do peso', 'Autonomia nutricional'],
+    promessaEmocional: 'Aprenda a comer sem culpa',
+    descricao: 'Você não vai viver de dieta para sempre. Aqui, reinserimos alimentos de forma estratégica para que seu corpo aprenda a processá-los sem acumular nova gordura. Sem restrição extrema.',
+    resultadoEsperado: 'Novos hábitos consolidados',
+    inclusos: ['Reintrodução alimentar', 'Educação nutricional', 'Receitas práticas', 'Autonomia alimentar'],
     cor: 'from-secondary-500 to-secondary-600',
     bgCor: 'bg-secondary-50',
     iconeCor: 'text-secondary-600',
+    borderCor: 'border-secondary-200',
   },
   {
     numero: '4',
+    nome: 'ANCORAGEM',
     titulo: 'Manutenção',
     duracao: '16 semanas',
-    descricao: 'Fase de equilíbrio para manter o peso alcançado e evitar o temido efeito sanfona. Acompanhamento contínuo.',
-    beneficios: ['Peso estável', 'Sem efeito sanfona', 'Novo estilo de vida'],
+    promessaEmocional: 'O fim do efeito sanfona',
+    descricao: 'Consolidamos todos os resultados para que seu peso novo se torne PERMANENTE. Você terá as ferramentas e o acompanhamento para manter seu novo corpo por toda a vida.',
+    resultadoEsperado: '87% não recuperam o peso',
+    inclusos: ['Acompanhamento mensal', 'Ajustes finos', 'Suporte de manutenção', 'Novo estilo de vida'],
     cor: 'from-accent-500 to-accent-600',
     bgCor: 'bg-accent-50',
     iconeCor: 'text-accent-600',
+    borderCor: 'border-accent-200',
   },
 ];
 ---
 
-<section id="metodo" class="py-20 lg:py-32 bg-white">
+<section id="metodo" class="py-20 lg:py-28 bg-white">
   <div class="section-container">
     <!-- Header -->
     <div class="text-center mb-16 animate-on-scroll">
       <span class="inline-block px-4 py-2 bg-primary-100 rounded-full text-primary-700 text-sm font-medium mb-4">
-        Método Exclusivo
+        Não é mágica. É ciência.
       </span>
-      <h2 class="section-title text-gray-900">
-        Conheça o <span class="gradient-text">Método 4 Fases</span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        O <span class="gradient-text">Método 4 Fases</span>
       </h2>
-      <p class="section-subtitle mt-4">
-        Protocolo científico desenvolvido com base em mais de 100 estudos internacionais.
-        Um método 100% natural que respeita o seu corpo e garante resultados duradouros.
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Protocolo exclusivo comprovado por mais de <strong class="text-gray-900">100 estudos científicos</strong>.
+        Funciona em 4 fases estratégicas que respeitam o seu corpo.
       </p>
     </div>
 
-    <!-- Timeline -->
-    <div class="relative">
-      <!-- Connection line (desktop) -->
-      <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-green-500 via-primary-500 to-accent-500 transform -translate-y-1/2 rounded-full"></div>
-
-      <!-- Phases Grid -->
-      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-        {fases.map((fase, index) => (
-          <div class="relative animate-on-scroll" style={`animation-delay: ${index * 0.1}s`}>
-            <!-- Phase Card -->
-            <div class={`card p-6 h-full ${fase.bgCor} border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2`}>
-              <!-- Phase Number -->
-              <div class={`w-14 h-14 rounded-2xl bg-gradient-to-br ${fase.cor} text-white flex items-center justify-center text-2xl font-bold mb-4 shadow-lg`}>
-                {fase.numero}
+    <!-- Fases -->
+    <div class="space-y-8 lg:space-y-12">
+      {fases.map((fase, index) => (
+        <div
+          class={`relative animate-on-scroll ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <div class={`${fase.bgCor} rounded-3xl p-6 md:p-8 lg:p-10 border ${fase.borderCor}`}>
+            <div class="grid lg:grid-cols-12 gap-6 lg:gap-10 items-center">
+              <!-- Número e Nome -->
+              <div class="lg:col-span-3 text-center lg:text-left">
+                <div class={`inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br ${fase.cor} text-white text-3xl font-bold shadow-lg mb-4`}>
+                  {fase.numero}
+                </div>
+                <div class={`text-sm font-bold tracking-wider ${fase.iconeCor} mb-1`}>
+                  {fase.nome}
+                </div>
+                <h3 class="text-2xl font-bold text-gray-900">{fase.titulo}</h3>
+                <div class="text-sm text-gray-500 mt-2">{fase.duracao}</div>
               </div>
 
-              <!-- Content -->
-              <div class="mb-4">
-                <span class={`text-sm font-medium ${fase.iconeCor}`}>{fase.duracao}</span>
-                <h3 class="text-xl font-bold text-gray-900 mt-1">{fase.titulo}</h3>
+              <!-- Conteúdo -->
+              <div class="lg:col-span-5">
+                <p class={`text-lg font-semibold ${fase.iconeCor} mb-3`}>
+                  {fase.promessaEmocional}
+                </p>
+                <p class="text-gray-600 leading-relaxed mb-4">
+                  {fase.descricao}
+                </p>
+                <div class="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 shadow-sm">
+                  <svg class={`w-5 h-5 ${fase.iconeCor}`} fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="font-semibold text-gray-900">{fase.resultadoEsperado}</span>
+                </div>
               </div>
 
-              <p class="text-gray-600 text-sm mb-4 leading-relaxed">
-                {fase.descricao}
-              </p>
-
-              <!-- Benefits -->
-              <ul class="space-y-2">
-                {fase.beneficios.map((beneficio) => (
-                  <li class="flex items-center gap-2 text-sm text-gray-700">
-                    <svg class={`w-4 h-4 ${fase.iconeCor} flex-shrink-0`} fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                    </svg>
-                    {beneficio}
-                  </li>
-                ))}
-              </ul>
+              <!-- Inclusos -->
+              <div class="lg:col-span-4">
+                <p class="text-sm font-semibold text-gray-700 mb-3">O que inclui:</p>
+                <ul class="grid grid-cols-2 gap-2">
+                  {fase.inclusos.map((item) => (
+                    <li class="flex items-center gap-2 text-sm text-gray-600">
+                      <svg class={`w-4 h-4 ${fase.iconeCor} flex-shrink-0`} fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
           </div>
-        ))}
-      </div>
+        </div>
+      ))}
     </div>
 
-    <!-- CTA -->
-    <div class="text-center mt-16 animate-on-scroll">
-      <p class="text-gray-600 mb-6">
-        Pronto para começar sua transformação?
+    <!-- Resultado Final -->
+    <div class="mt-16 bg-gradient-to-br from-gray-900 to-gray-800 rounded-3xl p-8 md:p-12 text-white text-center animate-on-scroll">
+      <h3 class="text-2xl md:text-3xl font-bold mb-4">
+        O Resultado?
+      </h3>
+      <p class="text-xl md:text-2xl text-gray-300 mb-8">
+        Você não emagrece. Você se <span class="text-primary-400 font-bold">TRANSFORMA</span>.
       </p>
-      <a
-        href="https://api.whatsapp.com/send?phone=555481630905&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20o%20M%C3%A9todo%204%20Fases"
-        target="_blank"
-        rel="noopener noreferrer"
-        class="btn-primary"
-      >
-        Iniciar minha transformação
-      </a>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a
+          href={whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-whatsapp"
+        >
+          <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+          </svg>
+          Quero começar minha transformação
+        </a>
+        <a href="#resultados" class="btn-secondary bg-white/10 border-white/20 text-white hover:bg-white/20">
+          Ver resultados reais
+        </a>
+      </div>
     </div>
   </div>
 </section>
