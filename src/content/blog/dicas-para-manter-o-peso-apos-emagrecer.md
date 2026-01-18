@@ -3,8 +3,6 @@ title: "7 Dicas Para Manter o Peso Após Emagrecer"
 description: "Descubra estratégias comprovadas para manter o peso após o emagrecimento e evitar o temido efeito sanfona."
 pubDate: 2025-01-05
 author: "Emagrecentro Carlos Barbosa"
-image: "/images/blog/manter-peso.jpg"
-imageAlt: "Pessoa comemorando resultados de emagrecimento"
 tags: ["manutenção", "efeito sanfona", "dicas", "estilo de vida"]
 ---
 
