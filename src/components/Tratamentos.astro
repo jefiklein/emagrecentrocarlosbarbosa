@@ -1,0 +1,143 @@
+---
+const tratamentos = [
+  {
+    titulo: 'Método 4 Fases',
+    descricao: 'Protocolo completo de emagrecimento científico com 4 fases para perda de peso saudável e duradoura.',
+    icone: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+    destaque: true,
+  },
+  {
+    titulo: 'Auriculoterapia',
+    descricao: 'Técnica milenar que ajuda no controle da ansiedade, compulsão alimentar e acelera o metabolismo.',
+    icone: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
+    destaque: false,
+  },
+  {
+    titulo: 'Power Injection',
+    descricao: 'Aplicação de enzimas que potencializa a queima de gordura localizada de forma segura e eficaz.',
+    icone: 'M13 10V3L4 14h7v7l9-11h-7z',
+    destaque: false,
+  },
+  {
+    titulo: 'Infravermelho',
+    descricao: 'Sessões com manta térmica que aceleram o metabolismo e ajudam na eliminação de toxinas.',
+    icone: 'M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z',
+    destaque: false,
+  },
+  {
+    titulo: 'Radiofrequência',
+    descricao: 'Tecnologia que estimula a produção de colágeno, combatendo flacidez e melhorando o contorno corporal.',
+    icone: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z',
+    destaque: false,
+  },
+  {
+    titulo: 'Carboxiterapia',
+    descricao: 'Tratamento que melhora a circulação e ajuda a reduzir celulite e gordura localizada.',
+    icone: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
+    destaque: false,
+  },
+];
+---
+
+<section id="tratamentos" class="py-20 lg:py-32 bg-white">
+  <div class="section-container">
+    <!-- Header -->
+    <div class="text-center mb-16 animate-on-scroll">
+      <span class="inline-block px-4 py-2 bg-primary-100 rounded-full text-primary-700 text-sm font-medium mb-4">
+        Nossos Serviços
+      </span>
+      <h2 class="section-title text-gray-900">
+        Tratamentos <span class="gradient-text">Especializados</span>
+      </h2>
+      <p class="section-subtitle mt-4">
+        Oferecemos uma gama completa de tratamentos para emagrecimento e estética,
+        sempre com acompanhamento de profissionais qualificados.
+      </p>
+    </div>
+
+    <!-- Treatments Grid -->
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {tratamentos.map((tratamento, index) => (
+        <div
+          class={`card p-8 animate-on-scroll hover:-translate-y-2 transition-all duration-300 ${
+            tratamento.destaque ? 'bg-gradient-to-br from-primary-600 to-primary-700 text-white ring-4 ring-primary-200' : 'bg-white'
+          }`}
+          style={`animation-delay: ${index * 0.1}s`}
+        >
+          <!-- Icon -->
+          <div class={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 ${
+            tratamento.destaque ? 'bg-white/20' : 'bg-primary-100'
+          }`}>
+            <svg
+              class={`w-7 h-7 ${tratamento.destaque ? 'text-white' : 'text-primary-600'}`}
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={tratamento.icone} />
+            </svg>
+          </div>
+
+          <!-- Content -->
+          <h3 class={`text-xl font-bold mb-3 ${tratamento.destaque ? 'text-white' : 'text-gray-900'}`}>
+            {tratamento.titulo}
+          </h3>
+          <p class={`leading-relaxed ${tratamento.destaque ? 'text-white/90' : 'text-gray-600'}`}>
+            {tratamento.descricao}
+          </p>
+
+          {tratamento.destaque && (
+            <div class="mt-6 pt-6 border-t border-white/20">
+              <span class="text-sm text-white/80">Tratamento mais procurado</span>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <!-- Additional Info -->
+    <div class="mt-16 grid md:grid-cols-3 gap-8 animate-on-scroll">
+      <div class="text-center p-6">
+        <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+          </svg>
+        </div>
+        <h4 class="font-bold text-gray-900 mb-2">100% Seguro</h4>
+        <p class="text-gray-600 text-sm">Todos os procedimentos são realizados por profissionais qualificados</p>
+      </div>
+
+      <div class="text-center p-6">
+        <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+          </svg>
+        </div>
+        <h4 class="font-bold text-gray-900 mb-2">Resultados Rápidos</h4>
+        <p class="text-gray-600 text-sm">Veja resultados já nas primeiras semanas de tratamento</p>
+      </div>
+
+      <div class="text-center p-6">
+        <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-4">
+          <svg class="w-8 h-8 text-accent-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+          </svg>
+        </div>
+        <h4 class="font-bold text-gray-900 mb-2">Equipe Especializada</h4>
+        <p class="text-gray-600 text-sm">Biomédicos, fisioterapeutas e esteticistas prontos para te ajudar</p>
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-12 animate-on-scroll">
+      <a
+        href="https://api.whatsapp.com/send?phone=555481630905&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20os%20tratamentos%20dispon%C3%ADveis"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary"
+      >
+        Conhecer todos os tratamentos
+      </a>
+    </div>
+  </div>
+</section>

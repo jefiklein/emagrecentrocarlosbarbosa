@@ -1,0 +1,120 @@
+---
+const fases = [
+  {
+    numero: '1',
+    titulo: 'Fase Detox',
+    duracao: '7 dias',
+    descricao: 'Fase de desintoxicação onde você elimina toxinas e começa a perder peso rapidamente. Perda média de 3% a 4% do peso corporal.',
+    beneficios: ['Eliminação de toxinas', 'Redução da retenção líquida', 'Início da queima de gordura'],
+    cor: 'from-green-500 to-green-600',
+    bgCor: 'bg-green-50',
+    iconeCor: 'text-green-600',
+  },
+  {
+    numero: '2',
+    titulo: 'Eliminação de Peso',
+    duracao: '4 semanas',
+    descricao: 'Fase de emagrecimento acelerado com acompanhamento profissional. Eliminação de 5% a 7% do peso corporal.',
+    beneficios: ['Queima de gordura intensa', 'Redução de medidas', 'Aumento da energia'],
+    cor: 'from-primary-500 to-primary-600',
+    bgCor: 'bg-primary-50',
+    iconeCor: 'text-primary-600',
+  },
+  {
+    numero: '3',
+    titulo: 'Reeducação Alimentar',
+    duracao: '3 semanas',
+    descricao: 'Reintrodução gradual de carboidratos de baixo índice glicêmico para criar novos hábitos alimentares saudáveis.',
+    beneficios: ['Novos hábitos alimentares', 'Estabilização do peso', 'Autonomia nutricional'],
+    cor: 'from-secondary-500 to-secondary-600',
+    bgCor: 'bg-secondary-50',
+    iconeCor: 'text-secondary-600',
+  },
+  {
+    numero: '4',
+    titulo: 'Manutenção',
+    duracao: '16 semanas',
+    descricao: 'Fase de equilíbrio para manter o peso alcançado e evitar o temido efeito sanfona. Acompanhamento contínuo.',
+    beneficios: ['Peso estável', 'Sem efeito sanfona', 'Novo estilo de vida'],
+    cor: 'from-accent-500 to-accent-600',
+    bgCor: 'bg-accent-50',
+    iconeCor: 'text-accent-600',
+  },
+];
+---
+
+<section id="metodo" class="py-20 lg:py-32 bg-white">
+  <div class="section-container">
+    <!-- Header -->
+    <div class="text-center mb-16 animate-on-scroll">
+      <span class="inline-block px-4 py-2 bg-primary-100 rounded-full text-primary-700 text-sm font-medium mb-4">
+        Método Exclusivo
+      </span>
+      <h2 class="section-title text-gray-900">
+        Conheça o <span class="gradient-text">Método 4 Fases</span>
+      </h2>
+      <p class="section-subtitle mt-4">
+        Protocolo científico desenvolvido com base em mais de 100 estudos internacionais.
+        Um método 100% natural que respeita o seu corpo e garante resultados duradouros.
+      </p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="relative">
+      <!-- Connection line (desktop) -->
+      <div class="hidden lg:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-green-500 via-primary-500 to-accent-500 transform -translate-y-1/2 rounded-full"></div>
+
+      <!-- Phases Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {fases.map((fase, index) => (
+          <div class="relative animate-on-scroll" style={`animation-delay: ${index * 0.1}s`}>
+            <!-- Phase Card -->
+            <div class={`card p-6 h-full ${fase.bgCor} border border-gray-100 hover:shadow-2xl transition-all duration-300 hover:-translate-y-2`}>
+              <!-- Phase Number -->
+              <div class={`w-14 h-14 rounded-2xl bg-gradient-to-br ${fase.cor} text-white flex items-center justify-center text-2xl font-bold mb-4 shadow-lg`}>
+                {fase.numero}
+              </div>
+
+              <!-- Content -->
+              <div class="mb-4">
+                <span class={`text-sm font-medium ${fase.iconeCor}`}>{fase.duracao}</span>
+                <h3 class="text-xl font-bold text-gray-900 mt-1">{fase.titulo}</h3>
+              </div>
+
+              <p class="text-gray-600 text-sm mb-4 leading-relaxed">
+                {fase.descricao}
+              </p>
+
+              <!-- Benefits -->
+              <ul class="space-y-2">
+                {fase.beneficios.map((beneficio) => (
+                  <li class="flex items-center gap-2 text-sm text-gray-700">
+                    <svg class={`w-4 h-4 ${fase.iconeCor} flex-shrink-0`} fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                    </svg>
+                    {beneficio}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- CTA -->
+    <div class="text-center mt-16 animate-on-scroll">
+      <p class="text-gray-600 mb-6">
+        Pronto para começar sua transformação?
+      </p>
+      <a
+        href="https://api.whatsapp.com/send?phone=555481630905&text=Ol%C3%A1,%20gostaria%20de%20saber%20mais%20sobre%20o%20M%C3%A9todo%204%20Fases"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary"
+      >
+        Iniciar minha transformação
+      </a>
+    </div>
+  </div>
+</section>
