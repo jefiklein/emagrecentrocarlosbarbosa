@@ -1,0 +1,127 @@
+---
+/**
+ * SEÇÃO PROBLEMA - Agitação da Dor
+ *
+ * Esta seção valida a frustração do cliente e mostra empatia.
+ * Baseado nas pesquisas: Perplexity, Grok e Google.
+ *
+ * Objetivo: O cliente precisa sentir que você entende a frustração dele
+ * antes de apresentar a solução.
+ */
+
+import { getWhatsAppLink } from '../config/clinic';
+
+const whatsappLink = getWhatsAppLink('Olá, quero saber se o Método funciona para o meu caso');
+
+const problemas = [
+  {
+    icone: '😫',
+    texto: 'Passou fome e ficou irritado o dia inteiro',
+  },
+  {
+    icone: '💊',
+    texto: 'Usou remédios que aceleraram o coração e deram efeitos colaterais',
+  },
+  {
+    icone: '🏋️',
+    texto: 'Gastou fortunas em academia sem resultado no corpo',
+  },
+  {
+    icone: '📈',
+    texto: 'Emagreceu, mas 6 meses depois o peso voltou tudo (e mais)',
+  },
+  {
+    icone: '😔',
+    texto: 'Sentiu baixa autoestima e evitou fotos e espelhos',
+  },
+];
+
+const razoes = [
+  'Não entendem COMO emagrecer de verdade',
+  'Usam métodos que matam de fome',
+  'Não têm acompanhamento profissional',
+  'Não sabem manter o resultado depois',
+];
+---
+
+<section id="problema" class="py-20 lg:py-28 bg-gray-50">
+  <div class="section-container">
+    <div class="max-w-4xl mx-auto">
+      <!-- Header -->
+      <div class="text-center mb-12 animate-on-scroll">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          Você está <span class="text-primary-600">cansado</span> de...
+        </h2>
+      </div>
+
+      <!-- Lista de problemas -->
+      <div class="grid md:grid-cols-2 gap-4 mb-12 animate-on-scroll">
+        {problemas.map((problema) => (
+          <div class="flex items-center gap-4 bg-white rounded-2xl p-5 shadow-sm border border-gray-100">
+            <span class="text-3xl">{problema.icone}</span>
+            <p class="text-gray-700 font-medium">{problema.texto}</p>
+          </div>
+        ))}
+      </div>
+
+      <!-- Estatística de impacto -->
+      <div class="bg-white rounded-3xl p-8 md:p-12 shadow-lg border border-gray-100 animate-on-scroll">
+        <div class="text-center mb-8">
+          <p class="text-xl md:text-2xl text-gray-700 mb-4">
+            Sabe por quê?
+          </p>
+          <div class="inline-flex items-center gap-3 bg-primary-100 rounded-2xl px-6 py-4">
+            <span class="text-4xl md:text-5xl font-bold text-primary-600">76%</span>
+            <p class="text-left text-gray-700">
+              das pessoas que tentam emagrecer<br />
+              <strong class="text-gray-900">falham nos primeiros 30 dias</strong>
+            </p>
+          </div>
+        </div>
+
+        <p class="text-lg text-gray-600 text-center mb-8">
+          Isso acontece porque a maioria das pessoas:
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-4 mb-10">
+          {razoes.map((razao) => (
+            <div class="flex items-center gap-3">
+              <div class="w-6 h-6 bg-red-100 rounded-full flex items-center justify-center flex-shrink-0">
+                <svg class="w-4 h-4 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                </svg>
+              </div>
+              <p class="text-gray-700">{razao}</p>
+            </div>
+          ))}
+        </div>
+
+        <!-- Transição para solução -->
+        <div class="text-center pt-8 border-t border-gray-100">
+          <p class="text-xl md:text-2xl font-semibold text-gray-900 mb-6">
+            A culpa <span class="text-primary-600">não é sua.</span>
+          </p>
+          <p class="text-gray-600 mb-8 max-w-2xl mx-auto">
+            Você não precisa de mais força de vontade.
+            Você precisa de um <strong class="text-gray-900">Método Científico</strong> que realmente funcione.
+          </p>
+
+          <!-- CTA Contextualizado -->
+          <div class="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn-primary"
+            >
+              Descobrir se funciona para meu caso
+            </a>
+            <a href="#metodo" class="btn-secondary">
+              Ver como funciona
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

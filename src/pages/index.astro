@@ -1,33 +1,65 @@
 ---
+/**
+ * PÁGINA PRINCIPAL - Landing Page
+ *
+ * Estrutura otimizada baseada nas pesquisas:
+ * 1. Hero (Promessa + CTA)
+ * 2. Problema (Agitação da dor)
+ * 3. Método (Solução)
+ * 4. Resultados (Prova visual)
+ * 5. Depoimentos (Prova social)
+ * 6. FAQ (Redução de objeções)
+ * 7. Contato (Localização + CTA final)
+ *
+ * Seções removidas: Tratamentos (muito genérico), SocialProof (redes sociais no footer)
+ */
+
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import Problema from '../components/Problema.astro';
 import Metodo from '../components/Metodo.astro';
 import Resultados from '../components/Resultados.astro';
-import Tratamentos from '../components/Tratamentos.astro';
 import Depoimentos from '../components/Depoimentos.astro';
 import FAQ from '../components/FAQ.astro';
-import SocialProof from '../components/SocialProof.astro';
 import Contato from '../components/Contato.astro';
 import Disclaimer from '../components/Disclaimer.astro';
 import Footer from '../components/Footer.astro';
+
+import { clinicConfig } from '../config/clinic';
+
+const { city, seo } = clinicConfig;
 ---
 
 <Layout
-  title="Emagrecentro Carlos Barbosa | Centro de Emagrecimento e Estética"
-  description="Emagrecentro Carlos Barbosa - Centro de Emagrecimento e Estética na Serra Gaúcha. Método 4 Fases cientificamente comprovado. Agende sua avaliação gratuita. Maior rede das Américas com mais de 4 milhões de clientes atendidos."
+  title={`Emagrecentro ${city} | Elimine até 10% do Peso em 5 Semanas`}
+  description={`Emagrecentro ${city} - Método 4 Fases cientificamente comprovado. Perca peso sem fome, sem remédios e sem efeito sanfona. Agende sua avaliação gratuita.`}
 >
   <Header />
 
   <main>
+    <!-- 1. HERO - Promessa + CTA acima da dobra -->
     <Hero />
+
+    <!-- 2. PROBLEMA - Agitação da dor, empatia -->
+    <Problema />
+
+    <!-- 3. MÉTODO - A solução científica -->
     <Metodo />
+
+    <!-- 4. RESULTADOS - Prova visual (antes/depois) -->
     <Resultados />
-    <Tratamentos />
+
+    <!-- 5. DEPOIMENTOS - Prova social localizada -->
     <Depoimentos />
+
+    <!-- 6. FAQ - Redução de objeções -->
     <FAQ />
-    <SocialProof />
+
+    <!-- 7. CONTATO - Localização + CTA final + Info da cidade -->
     <Contato />
+
+    <!-- DISCLAIMER - Compliance Facebook/Google -->
     <Disclaimer />
   </main>
 
