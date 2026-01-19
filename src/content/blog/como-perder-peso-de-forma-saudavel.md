@@ -3,6 +3,8 @@ title: "Como Perder Peso de Forma Saudável: Guia Completo"
 description: "Descubra as melhores práticas para emagrecer de forma saudável e sustentável, sem efeito sanfona e com qualidade de vida."
 pubDate: 2025-01-15
 author: "Emagrecentro Carlos Barbosa"
+image: "/images/blog/emagrecimento-saudavel.webp"
+imageAlt: "Prato saudável com salada, legumes e proteína"
 tags: ["emagrecimento", "saúde", "dicas", "nutrição"]
 ---
 

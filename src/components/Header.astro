@@ -16,15 +16,14 @@ const currentPath = Astro.url.pathname;
   <nav class="section-container">
     <div class="flex items-center justify-between h-20">
       <!-- Logo -->
-      <a href="/" class="flex items-center gap-3 group">
-        <!-- Logo placeholder - substitua por <img src="/images/logo.png" ... /> quando tiver o logo -->
-        <div class="h-12 w-12 rounded-xl bg-gradient-to-br from-primary-500 to-primary-600 flex items-center justify-center shadow-md transition-transform group-hover:scale-105">
-          <span class="text-white font-bold text-xl">E</span>
-        </div>
-        <div class="hidden sm:block">
-          <span class="block text-lg font-bold text-primary-600 leading-tight">Emagrecentro</span>
-          <span class="block text-sm text-gray-600 leading-tight">Carlos Barbosa</span>
-        </div>
+      <a href="/" class="flex items-center gap-2 group">
+        <img
+          src="/images/logo-transparente.webp"
+          alt="Emagrecentro Carlos Barbosa"
+          class="h-12 w-auto transition-transform group-hover:scale-105"
+          width="48"
+          height="48"
+        />
       </a>
 
       <!-- Desktop Navigation -->

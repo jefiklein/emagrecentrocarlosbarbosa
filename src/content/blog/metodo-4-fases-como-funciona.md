@@ -3,6 +3,8 @@ title: "Método 4 Fases: Como Funciona o Tratamento da Emagrecentro"
 description: "Entenda em detalhes como funciona o Método 4 Fases, o protocolo de emagrecimento científico que já transformou a vida de milhões de pessoas."
 pubDate: 2025-01-10
 author: "Emagrecentro Carlos Barbosa"
+image: "/images/blog/metodo-4-fases.webp"
+imageAlt: "Infográfico das 4 fases do método de emagrecimento"
 tags: ["método 4 fases", "tratamento", "emagrecentro", "emagrecimento"]
 ---
 
