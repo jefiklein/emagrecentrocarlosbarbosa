@@ -41,6 +41,14 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+# Allow google image bot
+User-agent: Googlebot-Image
+Allow: /
+
+# Allow google ads bot
+User-agent: AdsBot-Google
+Allow: /
+
 # Crawl-delay for respectful crawling
 User-agent: *
 Crawl-delay: 1
