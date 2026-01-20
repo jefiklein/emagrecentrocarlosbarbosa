@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import { clinicConfig } from '../config/clinic';
+import { getStructuredData } from '../utils/seo';
 import CookieConsent from '../components/CookieConsent.astro';
 
 interface Props {
@@ -15,7 +17,7 @@ interface Props {
 
 const {
   title,
-  description = 'Emagrecentro Carlos Barbosa - Centro de Emagrecimento e Estética. Método 4 Fases cientificamente comprovado. Perca até 10% do peso em 5 semanas. Maior rede das Américas com mais de 4 milhões de clientes atendidos.',
+  description = clinicConfig.seo.description,
   image = '/images/og-image.jpeg',
   type = 'website',
   publishedTime,
@@ -27,159 +29,7 @@ const {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const socialImageURL = new URL(image, Astro.site);
 
-const structuredData = {
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "MedicalBusiness",
-      "@id": "https://emagrecentrocarlosbarbosa.com.br/#organization",
-      "name": "Emagrecentro Carlos Barbosa",
-      "alternateName": "Emagrecentro CB",
-      "url": "https://emagrecentrocarlosbarbosa.com.br",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://emagrecentrocarlosbarbosa.com.br/images/logo.png"
-      },
-      "image": "https://emagrecentrocarlosbarbosa.com.br/images/clinica.jpg",
-      "description": "Centro de Emagrecimento e Estética em Carlos Barbosa - RS. Método 4 Fases cientificamente comprovado para emagrecimento saudável.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Rua Valter Jobim, 523 - Sala 06",
-        "addressLocality": "Carlos Barbosa",
-        "addressRegion": "RS",
-        "postalCode": "95185-000",
-        "addressCountry": "BR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -29.297659765233554,
-        "longitude": -51.505876698662526
-      },
-      "telephone": "+55-54-99338-8577",
-      "priceRange": "$$",
-      "openingHoursSpecification": [
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "08:00",
-          "closes": "12:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-          "opens": "13:00",
-          "closes": "20:00"
-        },
-        {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": "Saturday",
-          "opens": "08:00",
-          "closes": "12:00"
-        }
-      ],
-      "sameAs": [
-        "https://www.instagram.com/emagrecentrocarlosbarbosa",
-        "https://www.facebook.com/emagrecentrocarlosbarbosa",
-        "https://www.youtube.com/@emagrecentrocarlosbarbosa",
-        "https://www.tiktok.com/@emagrecentrocb"
-      ],
-      "parentOrganization": {
-        "@type": "Organization",
-        "name": "Emagrecentro",
-        "url": "https://emagrecentro.com.br"
-      },
-      "medicalSpecialty": ["WeightLossProgram", "Nutrition", "Aesthetics"],
-      "availableService": [
-        {
-          "@type": "MedicalProcedure",
-          "name": "Método 4 Fases",
-          "description": "Protocolo de emagrecimento científico em 4 fases"
-        },
-        {
-          "@type": "MedicalProcedure",
-          "name": "Auriculoterapia",
-          "description": "Técnica para controle de apetite e ansiedade"
-        },
-        {
-          "@type": "MedicalProcedure",
-          "name": "Tratamentos Estéticos",
-          "description": "Radiofrequência, carboxiterapia, lipocavitação"
-        }
-      ],
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "reviewCount": "127"
-      },
-      "areaServed": [
-        {
-          "@type": "City",
-          "name": "Carlos Barbosa",
-          "sameAs": "https://pt.wikipedia.org/wiki/Carlos_Barbosa"
-        },
-        {
-          "@type": "City",
-          "name": "Salvador do Sul"
-        },
-        {
-          "@type": "City",
-          "name": "Barão"
-        },
-        {
-          "@type": "City",
-          "name": "São Pedro da Serra"
-        },
-        {
-          "@type": "City",
-          "name": "Tupandi"
-        },
-        {
-          "@type": "City",
-          "name": "Boa Vista do Sul"
-        },
-        {
-          "@type": "City",
-          "name": "São Vendelino"
-        },
-        {
-          "@type": "City",
-          "name": "Alto Feliz"
-        },
-        {
-          "@type": "City",
-          "name": "São José do Sul"
-        }
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://emagrecentrocarlosbarbosa.com.br/#website",
-      "url": "https://emagrecentrocarlosbarbosa.com.br",
-      "name": "Emagrecentro Carlos Barbosa",
-      "description": description,
-      "publisher": {
-        "@id": "https://emagrecentrocarlosbarbosa.com.br/#organization"
-      },
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "https://emagrecentrocarlosbarbosa.com.br/blog?q={search_term_string}",
-        "query-input": "required name=search_term_string"
-      }
-    },
-    {
-      "@type": "BreadcrumbList",
-      "@id": "https://emagrecentrocarlosbarbosa.com.br/#breadcrumb",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Home",
-          "item": "https://emagrecentrocarlosbarbosa.com.br"
-        }
-      ]
-    }
-  ]
-};
+const structuredData = getStructuredData(clinicConfig);
 ---
 
 <!doctype html>
@@ -193,6 +43,7 @@ const structuredData = {
     <title>{title}</title>
     <meta name="title" content={title} />
     <meta name="description" content={description} />
+    <meta name="keywords" content={clinicConfig.seo.keywords.join(', ')} />
     <link rel="canonical" href={canonicalURL} />
     {noindex && <meta name="robots" content="noindex, nofollow" />}
 
